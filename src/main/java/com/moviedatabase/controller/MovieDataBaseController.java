@@ -57,6 +57,7 @@ public class MovieDataBaseController {
 		
 	//Search types (film, tvshow, people) by different criteria in my database.
 	
+	//Criteria: title/releaseDate/originalLanguage
 	@GetMapping("/getFilm")
 	@ApiOperation("Get films by criteria")
     @ApiResponses({ @ApiResponse(code = 200, message = "OK"),
@@ -70,13 +71,18 @@ public class MovieDataBaseController {
 				
 		try {
 			Page<Film> sortedPage = movieService.getFilmBy(criteria, value, getValidNumber(number),getValidSize(size));
+			if(sortedPage.isEmpty()) {
+				return new ResponseEntity<>("There's no coincidences", HttpStatus.OK);				
+			} else {
 			return new ResponseEntity<Page<Film>>(sortedPage, HttpStatus.OK); 
+			}
 		} catch (NoSuchElementException e) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST); 
 		}
 		
     }
 	
+	//Criteria: name/firstAirDate/originalLanguage
 	@GetMapping("/getTvshow")
 	@ApiOperation("Get tv shows by criteria")
     @ApiResponses({ @ApiResponse(code = 200, message = "OK"),
@@ -91,7 +97,11 @@ public class MovieDataBaseController {
 		
 		try {
 			Page<Tvshow> sortedPage = tvService.getTvshowBy(criteria, value, getValidNumber(number),getValidSize(size));
+			if(sortedPage.isEmpty()) {
+				return new ResponseEntity<>("There's no coincidences", HttpStatus.OK);				
+			} else {
 			return new ResponseEntity<Page<Tvshow>>(sortedPage, HttpStatus.OK); 
+			}
 		} catch (NoSuchElementException e) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST); 
 		}
@@ -99,7 +109,7 @@ public class MovieDataBaseController {
     }
 	
 
-	
+	//Criteria: name / placeOfBirth
 	@GetMapping("/getPerson")
 	@ApiOperation("Get people by criteria")
     @ApiResponses({ @ApiResponse(code = 200, message = "OK"),
@@ -114,7 +124,11 @@ public class MovieDataBaseController {
 		
 		try {
 			Page<Person> sortedPage = personService.getPersonBy(criteria, value, getValidNumber(number),getValidSize(size));
+			if(sortedPage.isEmpty()) {
+				return new ResponseEntity<>("There's no coincidences", HttpStatus.OK);				
+			} else {
 			return new ResponseEntity<Page<Person>>(sortedPage, HttpStatus.OK); 
+			}
 		} catch (NoSuchElementException e) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST); 
 		}

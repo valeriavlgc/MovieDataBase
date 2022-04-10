@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "96bef269-b7cf-4bb9-93fb-783bdeb5fec1",
+		"name": "MovieDataBase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AuthenticationController",
+			"item": [
+				{
+					"name": "Login (GetToken)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MovieDataBaseController",
+			"item": [
+				{
+					"name": "GetFilm",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cinemaDb/getFilm?criteria=title&value=fight+club",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemaDb",
+								"getFilm"
+							],
+							"query": [
+								{
+									"key": "criteria",
+									"value": "title"
+								},
+								{
+									"key": "value",
+									"value": "fight+club"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTvshow",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cinemaDb/getTvshow?criteria=name&value=house",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemaDb",
+								"getTvshow"
+							],
+							"query": [
+								{
+									"key": "criteria",
+									"value": "name"
+								},
+								{
+									"key": "value",
+									"value": "house"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPerson",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cinemaDb/getPerson?criteria=name&value=johnny+depp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemaDb",
+								"getPerson"
+							],
+							"query": [
+								{
+									"key": "criteria",
+									"value": "name"
+								},
+								{
+									"key": "value",
+									"value": "johnny+depp"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search (in TMDB)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjpbIlJPTEVfQURNSU4iXSwic3ViIjoiYWRtaW4iLCJpYXQiOjE2NDk2MDkwNzEsImV4cCI6MTY0OTYzNzg3MX0.V3NhnSXwYmMyG9WqhauKoFn4h2f5ViLZHE8LZg54JW3G22qBbr0yzYn0TWthyMRBldpIP_mH8PgPJ7hxuXOwZg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cinemaDb/search?type=movies&query=donnie+darko",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemaDb",
+								"search"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "movies"
+								},
+								{
+									"key": "query",
+									"value": "donnie+darko"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SaveFilm",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cinemaDb/saveFilm?movieId=550",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemaDb",
+								"saveFilm"
+							],
+							"query": [
+								{
+									"key": "movieId",
+									"value": "550"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SavePerson",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cinemaDb/savePerson?personId=345",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemaDb",
+								"savePerson"
+							],
+							"query": [
+								{
+									"key": "personId",
+									"value": "345"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SaveTvshow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cinemaDb/saveTvshow?tvshowId=5678",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemaDb",
+								"saveTvshow"
+							],
+							"query": [
+								{
+									"key": "tvshowId",
+									"value": "5678"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllActors",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllDirectors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cinemaDb/getAllDirectors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemaDb",
+								"getAllDirectors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllTvshows",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cinemaDb/getAllTvshows",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemaDb",
+								"getAllTvshows"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllFilms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cinemaDb/getAllFilms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cinemaDb",
+								"getAllFilms"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
