@@ -41,7 +41,6 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping(value = "/cinemaDb/")
-//needed?
 @CrossOrigin(origins = "*")
 public class MovieDataBaseController {
 	
