@@ -55,23 +55,6 @@ public class MovieDataBaseController {
 	TvDataBaseService tvService;
 		
 	WebClient webClient = WebClient.create();
-	
-	//JWT: https://rubenjgarcia.cloud/jwt-spring-boot/
-	//https://ard333.medium.com/authentication-and-authorization-using-jwt-on-spring-webflux-29b81f813e78
-	
-	//https://spring.io/guides/gs/rest-service-cors/ CORS implementation
-	
-	//https://www.baeldung.com/spring-data-jpa-pagination-sorting pagination PageRequest Object. 
- 
-	//Tareas x:
-	//Controladores tvshow y persona acabar filtrado.
-	//añadir import bien hecho. 
-	// Validate pagination parameters? if null DEFAULT? https://stackoverflow.com/questions/47468250/how-can-i-validate-size-of-pageable
-	//--------
-	//Añadir postman requests 
-	//logger
-	//Chequear si se regenera la bbdd cada vez (ddl = none).
-	
 		
 	//Search types (film, tvshow, people) by different criteria in my database.
 	
