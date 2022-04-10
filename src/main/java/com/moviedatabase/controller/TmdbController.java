@@ -76,19 +76,6 @@ public class TmdbController {
 		
 	}
 	
-//	@GetMapping("/4")
-//	public List<FilmDto> getGenre(String uri) {
-//				
-//		uri = "https://api.themoviedb.org/3/genre/movie/list?api_key=" + apiKey + "&language=en-US";
-//		RestTemplate restTemplate = new RestTemplate();
-//	   
-//		ResponseEntity<FilmDto[]> filmGenre = restTemplate.getForEntity(uri, FilmDto[].class);	
-//		//Predicate<FilmDto> dtoFilter = dto -> true;
-//		FilmDto[] filmList = filmGenre.getBody();
-//        List<FilmDto> List = Arrays.asList(filmList);
-//		   return List;
-//	}
-	
 	
 	//Method to perform searches on tmdb of any type with a given general query. 
 	@GetMapping("/5/{type}/{query}")
@@ -102,32 +89,8 @@ public class TmdbController {
 		            .bodyToMono(PageDto.class);
 	
 			
-       /*@GetMapping("/5/{type}/{query}")
-		 Mono<List<?>> getData(@PathVariable("type") String type, @PathVariable("query") String query) {
-		String uri = uriHelper.getUri(type, query);
-		
-	    return getPage(uri, 1).expand(response -> {
-	               if (!response.hasNext()) {
-	                    // stop
-	                    return Mono.empty(); 
-	                }
-	                // fetch next page
-	                return getPage(uri, response.getPage() + 1);
-	                
-	              }).flatMap(response -> Flux.fromIterable(response.getResults())).collectList();*/
+      
 	}
 	
-	
-	//	//Try returning flux for larger quantities of  pages. 
-	//	Mono<PageDto> getPage(String uri, int pageNum) {   
-	//		
-	//		return WebClient.create()
-	//				        .get()
-	//			            .uri(uri + "page={pageNum}", pageNum)
-	//			            .retrieve()
-	//			            .bodyToMono(PageDto.class);
-	//			            //.toEntityFlux(PageDto.class);
-	//	}
-	//	
 
 }

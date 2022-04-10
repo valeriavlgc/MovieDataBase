@@ -61,12 +61,7 @@ public class PersonDataBaseService {
 			 sortedPage = personRepository.findByNameContainingIgnoreCase(value, pageable);
 		 }  else if (criteria.equalsIgnoreCase("place of birth")) {
 			 sortedPage = personRepository.findByPlaceOfBirthContainingIgnoreCase(value, pageable);
-		 } /* else if(criteria.equalsIgnoreCase("originalLanguage")) {
-			 sortedPage = movieRepository.findByOriginalLanguageContainingIgnoreCase(value, pageable);
-		 }  /*else if(criteria.equalsIgnoreCase("genre")) {
-		     sortedPage = movieRepository.findByTitleContainingIgnoreCase(value, pageable);
-		 }	*/ 
-	   
+		 }	   
 	    return sortedPage;
 	}	
 	
