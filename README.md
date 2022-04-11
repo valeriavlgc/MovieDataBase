@@ -74,7 +74,7 @@ Usernmae : admin
 
 | Status Code | 200 | 400 | 401 | 500 |
 | :---: | :---: | :---: | :---: | :---: | 
-| Description | OK | BAD REQUEST | UNAUTHORIZED | INTERNAL SERVER ERROR | 
+| Description | `OK` | `BAD REQUEST` | `UNAUTHORIZED` | `INTERNAL SERVER ERROR` | 
 
 ## Errors
 
