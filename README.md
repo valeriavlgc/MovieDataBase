@@ -2,22 +2,25 @@
 
 The objective of this API is to perform different actions in a created database with three tables, that store films, tv shows and people (actors and directors). The information is obtainted from an external API, TMDB [The Movie DataBase] (https://developers.themoviedb.org/3/getting-started/introduction).
 
-FRONT?
-
-This project is developed using SpringBoot and gradle as the dependency manager.
-The database starts with an import of 8 mock entries to test all methods without the need of saving them before. 
-
-## Security
-
-This API is secured with JWT security. 
-
 ## General especifications
 
 Port 
 
+This project is developed using SpringBoot and gradle as the dependency manager.
+The database starts with an import of 8 mock entries to test all methods without the need of saving them before. 
 
+## Documentation
 
+Annotation based documentation for REST APIs implemented with Spring Web/Rest.
 
+Once the application is running, there is a browser access for
+
+SWAGGER UI http://localhost:8080/swagger-ui.html
+OpenAPI File http://localhost:8080/v3/api-docs
+
+## Security
+
+This API is secured with JWT security. 
 
 ## Controllers
 
