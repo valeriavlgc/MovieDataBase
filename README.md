@@ -4,8 +4,6 @@ The objective of this API is to perform different actions in a created database 
 
 ## General especifications
 
-Port 
-
 This project is developed using SpringBoot and gradle as the dependency manager.
 The database starts with an import of 8 mock entries to test all methods without the need of saving them before. 
 
@@ -29,6 +27,8 @@ There are three controllers:
 ###### MovieDataBase controller
 
 Three methods to filter data in my created database based on different criteria with a given value. 
+
+Access: http://localhost:8080/cinemaDb/
 ```
 GET film (criteria: title/releaseDate/originalLanguage)
 GET tvshow (criteria: name/firstAirDate/originalLanguage)
@@ -54,6 +54,8 @@ GET Allmovies
 ###### TMDB controller 
 
 4 endpoints to obtain data from the external API (tmdb API).
+
+Access: http://localhost:8080/tmdb/
 ```
 GET movie
 GET person
@@ -65,6 +67,8 @@ GET data (search with a query)
 
 One POST endpoint to login and generate a token if credentials are correct. 
 There's two users one with admin rights, the other with user rights.
+
+Access: http://localhost:8080/login
 ```
 Username : user 
 Password : user
@@ -81,8 +85,10 @@ Usernmae : admin
 
 ## Errors
 
-There three designed errors are the following: 
+There three designed exceptions are the following: 
 ```
-
+- Entry Already Exists
+- Entry Not Found
+- WrongTypeException
 ```
 
