@@ -14,6 +14,7 @@ Annotation based documentation for REST APIs implemented with Spring Web/Rest.
 Once the application is running, there is a browser access for
 
 SWAGGER UI http://localhost:8080/swagger-ui.html
+
 OpenAPI File http://localhost:8080/v3/api-docs
 
 ## Security
