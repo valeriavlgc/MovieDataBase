@@ -61,12 +61,12 @@ public class MovieDataBaseService {
 			 sortedPage = movieRepository.findByReleaseDateContaining(value, pageable);
 		 }  else if(criteria.equalsIgnoreCase("originalLanguage")) {
 			 sortedPage = movieRepository.findByOriginalLanguageContainingIgnoreCase(value, pageable);
-		 }  
-	   
+		 }  	   
+
 	    return sortedPage;
 	}	
 	
-	
+
 	public Page<Film> getAllFilms(int number, int size) {
 	Pageable pageable = PageRequest.of(number, size);	 
 	

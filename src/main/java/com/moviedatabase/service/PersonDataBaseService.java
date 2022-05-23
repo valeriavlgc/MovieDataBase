@@ -62,6 +62,7 @@ public class PersonDataBaseService {
 		 }  else if (criteria.equalsIgnoreCase("place of birth")) {
 			 sortedPage = personRepository.findByPlaceOfBirthContainingIgnoreCase(value, pageable);
 		 }	   
+
 	    return sortedPage;
 	}	
 	

@@ -89,8 +89,6 @@ public class TmdbController {
 		            .bodyToMono(PageDto.class);
 	
 			
-      
-	}
+   }
 	
-
 }

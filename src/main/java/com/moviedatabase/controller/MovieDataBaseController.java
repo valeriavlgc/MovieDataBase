@@ -41,7 +41,6 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping(value = "/cinemaDb/")
-//needed?
 @CrossOrigin(origins = "*")
 public class MovieDataBaseController {
 	
@@ -55,7 +54,7 @@ public class MovieDataBaseController {
 	TvDataBaseService tvService;
 		
 	WebClient webClient = WebClient.create();
-	
+
 		
 	//Search types (film, tvshow, people) by different criteria in my database.
 	
