@@ -58,7 +58,7 @@ public class TvDataBaseService {
 		
 		 if (criteria.equalsIgnoreCase("name")) {
 			 sortedPage = tvRepository.findByNameContainingIgnoreCase(value, pageable);
-		 }  else if (criteria.equalsIgnoreCase("first air date")) {
+		 }  else if (criteria.equalsIgnoreCase("firstAirDate")) {
 			 sortedPage = tvRepository.findByFirstAirDateContaining(value, pageable);
 		 }  else if(criteria.equalsIgnoreCase("originalLanguage")) {
 			 sortedPage = tvRepository.findByOriginalLanguageContainingIgnoreCase(value, pageable);
