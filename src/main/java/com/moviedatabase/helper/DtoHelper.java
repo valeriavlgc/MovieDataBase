@@ -1,10 +1,6 @@
 package com.moviedatabase.helper;
 
-import java.util.List;
-
 import org.springframework.beans.BeanUtils;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.moviedatabase.dto.FilmDto;
 import com.moviedatabase.dto.ResultPersonDto;
 import com.moviedatabase.dto.TvshowDto;

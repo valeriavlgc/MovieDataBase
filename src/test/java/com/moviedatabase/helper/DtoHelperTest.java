@@ -1,36 +1,26 @@
 package com.moviedatabase.helper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+
 
 import com.moviedatabase.dto.FilmDto;
-import com.moviedatabase.dto.TvshowDto;
 import com.moviedatabase.entity.Film;
 import com.moviedatabase.entity.Tvshow;
 
 //Cambiar anotaciones.
 
 @SpringBootTest
-public class DtoHelperTest {
-	
-    @MockBean
-	@Autowired
-    DtoHelper helperDto;
-    
+public class DtoHelperTest {  
     
     @Test
     public void test_toEntity() {
     FilmDto filmDto = new FilmDto(550, "The ring", "Very scary horror movie", "2003-01-10", "en");
     Film film = new Film();
     
-    film = helperDto.toEntity(filmDto);
+    film = DtoHelper.toEntity(filmDto);
    
     //assertEquals(film, helperDto.toEntity(filmDto));
     assertEquals(0, film.getFilmId());

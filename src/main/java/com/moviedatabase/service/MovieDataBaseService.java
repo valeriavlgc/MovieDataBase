@@ -1,9 +1,5 @@
 package com.moviedatabase.service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,7 +12,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 import com.moviedatabase.controller.exceptions.EntryAlreadyExists;
 import com.moviedatabase.controller.exceptions.EntryNotFound;
 import com.moviedatabase.dto.FilmDto;
-import com.moviedatabase.dto.PageDto;
 import com.moviedatabase.entity.Film;
 import com.moviedatabase.helper.DtoHelper;
 import com.moviedatabase.repository.IMovieDataBaseRepository;

@@ -1,7 +1,5 @@
 package com.moviedatabase.service;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -13,9 +11,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import com.moviedatabase.controller.exceptions.EntryAlreadyExists;
 import com.moviedatabase.controller.exceptions.EntryNotFound;
-import com.moviedatabase.dto.FilmDto;
 import com.moviedatabase.dto.ResultPersonDto;
-import com.moviedatabase.entity.Film;
 import com.moviedatabase.entity.Person;
 import com.moviedatabase.enums.Profession;
 import com.moviedatabase.helper.DtoHelper;

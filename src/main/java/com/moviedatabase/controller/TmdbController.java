@@ -1,39 +1,21 @@
  package com.moviedatabase.controller;
 
- //This controller class makes call to the external API from the movie database.
- 
-import java.awt.print.Pageable;
-import java.io.ObjectInputStream;
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.Predicate;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.reactive.function.client.WebClient;
-
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-
 import com.moviedatabase.dto.FilmDto;
 import com.moviedatabase.dto.PageDto;
 import com.moviedatabase.dto.ResultPersonDto;
 import com.moviedatabase.dto.TvshowDto;
-import com.moviedatabase.entity.Film;
-import com.moviedatabase.entity.Person;
-import com.moviedatabase.helper.DtoHelper;
 import com.moviedatabase.helper.UriHelper;
-
-import reactor.core.publisher.Flux;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
+
+//This controller class makes call to the external API from the movie database.
 
 @RestController
 @RequestMapping(value = "/tmdb/")
